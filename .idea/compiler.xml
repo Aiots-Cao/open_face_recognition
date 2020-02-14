@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="faceRecognition-main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="doGPSWeb-main" target="1.8" />
+      <module name="mybatis-generatorConfig" target="1.8" />
+      <module name="open-face-recognition-main" target="1.8" />
+      <module name="open_face_recognition" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="doGPSWeb-main" options="-parameters -extdirs /Users/mac/AllIdeProjects/IdeaProjects/open_face_recognition/open-face-recognition-main/lib" />
+      <module name="faceRecognition-main" options="-parameters -extdirs /Users/mac/AllIdeProjects/IdeaProjects/open_face_recognition/faceRecognition-main/lib" />
+      <module name="mybatis-generatorConfig" options="-parameters" />
+      <module name="open-face-recognition-main" options="-parameters -extdirs /Users/mac/AllIdeProjects/IdeaProjects/open_face_recognition/doGPSWeb-main/lib" />
+    </option>
+  </component>
+</project>
