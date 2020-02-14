@@ -9,6 +9,8 @@ import com.arcsoft.face.FunctionConfiguration;
 import com.arcsoft.face.enums.DetectMode;
 import com.arcsoft.face.enums.DetectOrient;
 import com.arcsoft.face.enums.ErrorInfo;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,6 +18,7 @@ import java.io.OutputStream;
 import java.util.Base64;
 import java.util.Base64.Decoder;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Aiots-cao
@@ -160,9 +163,11 @@ public class Utils {
 
     }
 
-    public static void main(String[] args) {
-        fileRename("C:\\Users\\mac\\Desktop\\iv\\2f1bef4f06994d51a73ae40bd529dbd8-register.jpg"
-        ,"C:\\Users\\mac\\Desktop\\iv\\"+new Date().toString()+"曹宝红.jpg");
-        System.out.println(new Date().toString());
+    public static JSONResult checkError(BindingResult result) {
+        if (result.hasErrors()) {
+            List<ObjectError> list = result.getAllErrors();
+            return JSONResult.errorMsg(list.get(0).getDefaultMessage());
+        }
+        return JSONResult.ok();
     }
 }
